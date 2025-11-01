@@ -1,0 +1,5 @@
+ToDoList/Other/GoogleService-Info*.plist
+
+ToDoList.xcodeproj/xcuserdata/
+ToDoList.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcuserstate
