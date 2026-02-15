@@ -5,14 +5,10 @@
 //  Created by Terry Gong on 10/26/25.
 //
 
-import Foundation
-import SwiftData
+import SwiftUI
 
-@Model
-final class ToDoListView {
-    var timestamp: Date
-    
-    init(timestamp: Date) {
-        self.timestamp = timestamp
+struct ToDoListView: View {
+    var body: some View {
+        Text("hello")
     }
 }

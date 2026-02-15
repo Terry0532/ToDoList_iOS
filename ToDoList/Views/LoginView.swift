@@ -13,9 +13,13 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HeaderView(title: "To Do List", subtitle: "Get things  done", angle: 15, background: .pink)
+                HeaderView(title: "To Do List", subtitle: "Get things done", angle: 15, background: .pink)
                 
                 Form {
+                    if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage).foregroundColor(Color.red)
+                    }
+                    
                     TextField("Email Address", text: $viewModel.email)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .autocapitalization(.none)
@@ -24,7 +28,7 @@ struct LoginView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     TLButton(title: "Log In", background: .blue) {
-                        
+                        viewModel.login()
                     }
                 }
                 

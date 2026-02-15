@@ -9,8 +9,14 @@ import SwiftUI
 import SwiftData
 
 struct MainView: View {
+    @StateObject var viewModel = MainViewViewModel()
+    
     var body: some View {
-        LoginView()
+        if viewModel.isLoggedIn, !viewModel.currentUserId.isEmpty {
+            ToDoListView()
+        } else {
+            LoginView()
+        }
     }
 //    @Environment(\.modelContext) private var modelContext
 //    @Query private var items: [Item]
